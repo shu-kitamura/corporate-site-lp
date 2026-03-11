@@ -20,6 +20,12 @@ docker compose up -d --build
 
 - Site: http://localhost:8080
 - Admin: http://localhost:8080/wp-admin
+- Theme directory: `wp-content/themes/hello-corp`
+
+初回起動時に `wordpress_setup` サービスが WordPress を自動インストールし、`Hello Corp` テーマを有効化します。
+ローカルのテーマファイルは bind mount されるので、`wp-content/themes/hello-corp` を編集するとブラウザ更新で反映されます。
+テーマは block theme 構成です。`theme.json`、`templates/*.html`、`parts/*.html`、`style.css` を編集しつつ、管理画面の `Appearance > Editor` からも構造を確認できます。
+既存の `db_data` / `wordpress_data` volume が残っている場合は再インストールは行わず、テーマ有効化のみ実行されます。完全に初期状態からやり直すなら `docker compose down -v` を使ってください。
 
 ### Stop
 

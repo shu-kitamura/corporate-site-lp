@@ -1,3 +1,11 @@
+name: corp-site-lp
+
+x-wordpress-image: &wordpress-image
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: corp-site-lp-wordpress:local
+
 services:
   db:
     image: mariadb:11.4
@@ -21,9 +29,7 @@ services:
       start_period: 30s
 
   wordpress:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    <<: *wordpress-image
     container_name: corp-site-lp-wordpress
     restart: unless-stopped
     depends_on:
@@ -43,6 +49,34 @@ services:
         define('FS_METHOD', 'direct');
     volumes:
       - wordpress_data:/var/www/html
+      - ./wp-content/themes/hello-corp:/var/www/html/wp-content/themes/hello-corp
+
+  wordpress_setup:
+    <<: *wordpress-image
+    container_name: corp-site-lp-wordpress-setup
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+    restart: "no"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX:-wp_}
+      WORDPRESS_SITE_URL: ${WORDPRESS_SITE_URL:-http://localhost:8080}
+      WORDPRESS_SITE_TITLE: ${WORDPRESS_SITE_TITLE:-Hello Corp}
+      WORDPRESS_ADMIN_USER: ${WORDPRESS_ADMIN_USER:-admin}
+      WORDPRESS_ADMIN_PASSWORD: ${WORDPRESS_ADMIN_PASSWORD:-admin}
+      WORDPRESS_ADMIN_EMAIL: ${WORDPRESS_ADMIN_EMAIL:-admin@example.com}
+      WORDPRESS_THEME_SLUG: ${WORDPRESS_THEME_SLUG:-hello-corp}
+    command: ["sh", "/scripts/bootstrap-wordpress.sh"]
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content/themes/hello-corp:/var/www/html/wp-content/themes/hello-corp
+      - ./scripts/bootstrap-wordpress.sh:/scripts/bootstrap-wordpress.sh:ro
 
 volumes:
   db_data:

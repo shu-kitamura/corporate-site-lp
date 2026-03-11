@@ -1,0 +1,74 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"full","className":"hello-corp-main","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","left":"1rem","right":"1rem"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull hello-corp-main" style="padding-top:4rem;padding-right:1rem;padding-bottom:4rem;padding-left:1rem">
+  <!-- wp:group {"className":"hello-corp-shell","layout":{"type":"constrained"}} -->
+  <div class="wp-block-group hello-corp-shell">
+    <!-- wp:group {"className":"hello-corp-card","style":{"border":{"radius":"32px"},"spacing":{"padding":{"top":"3rem","right":"3rem","bottom":"3rem","left":"3rem"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group hello-corp-card" style="border-radius:32px;padding-top:3rem;padding-right:3rem;padding-bottom:3rem;padding-left:3rem">
+      <!-- wp:paragraph {"className":"hello-corp-eyebrow","fontSize":"small"} -->
+      <p class="hello-corp-eyebrow has-small-font-size">Block Theme</p>
+      <!-- /wp:paragraph -->
+
+      <!-- wp:heading {"level":1,"className":"hello-corp-title","fontSize":"display"} -->
+      <h1 class="wp-block-heading hello-corp-title has-display-font-size">Hello World, WordPress.</h1>
+      <!-- /wp:heading -->
+
+      <!-- wp:paragraph {"className":"hello-corp-copy","fontSize":"medium"} -->
+      <p class="hello-corp-copy has-medium-font-size">This theme now uses <code>theme.json</code>, HTML templates, and CSS. Open <code>Appearance &gt; Editor</code> to edit it visually, or change the files in <code>wp-content/themes/hello-corp</code> and reload the page.</p>
+      <!-- /wp:paragraph -->
+
+      <!-- wp:buttons {"className":"hello-corp-actions"} -->
+      <div class="wp-block-buttons hello-corp-actions">
+        <!-- wp:button {"backgroundColor":"accent","textColor":"paper"} -->
+        <div class="wp-block-button"><a class="wp-block-button__link has-paper-color has-accent-background-color has-text-color has-background wp-element-button" href="/wp-admin/site-editor.php">Open Site Editor</a></div>
+        <!-- /wp:button -->
+
+        <!-- wp:button {"className":"is-style-outline"} -->
+        <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/wp-admin/">Open Dashboard</a></div>
+        <!-- /wp:button -->
+      </div>
+      <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group">
+      <!-- wp:heading {"level":2,"fontSize":"x-large"} -->
+      <h2 class="wp-block-heading has-x-large-font-size">Latest Posts</h2>
+      <!-- /wp:heading -->
+
+      <!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"displayLayout":{"type":"list"},"className":"hello-corp-posts"} -->
+      <div class="wp-block-query hello-corp-posts">
+        <!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+          <!-- wp:group {"className":"hello-corp-post-card","style":{"border":{"radius":"28px"},"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"1.5rem","left":"1.5rem"}}},"layout":{"type":"constrained"}} -->
+          <div class="wp-block-group hello-corp-post-card" style="border-radius:28px;padding-top:1.5rem;padding-right:1.5rem;padding-bottom:1.5rem;padding-left:1.5rem">
+            <!-- wp:post-title {"isLink":true,"level":3,"fontSize":"large"} /-->
+
+            <!-- wp:group {"className":"hello-corp-meta","layout":{"type":"flex","flexWrap":"wrap"}} -->
+            <div class="wp-block-group hello-corp-meta">
+              <!-- wp:post-date /-->
+              <!-- wp:post-terms {"term":"category"} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:post-excerpt {"moreText":"Read more"} /-->
+          </div>
+          <!-- /wp:group -->
+        <!-- /wp:post-template -->
+
+        <!-- wp:query-no-results -->
+          <!-- wp:paragraph -->
+          <p>No posts published yet.</p>
+          <!-- /wp:paragraph -->
+        <!-- /wp:query-no-results -->
+      </div>
+      <!-- /wp:query -->
+    </div>
+    <!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

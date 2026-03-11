@@ -1,0 +1,208 @@
+{
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "text",
+          "name": "Text",
+          "color": "#1d2a37"
+        },
+        {
+          "slug": "paper",
+          "name": "Paper",
+          "color": "#fffdf9"
+        },
+        {
+          "slug": "surface",
+          "name": "Surface",
+          "color": "#f7f3eb"
+        },
+        {
+          "slug": "accent",
+          "name": "Accent",
+          "color": "#1f6f78"
+        },
+        {
+          "slug": "accent-strong",
+          "name": "Accent Strong",
+          "color": "#134b5f"
+        },
+        {
+          "slug": "line",
+          "name": "Line",
+          "color": "#d8d2c8"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "44rem",
+      "wideSize": "72rem"
+    },
+    "spacing": {
+      "blockGap": true,
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        {
+          "slug": "20",
+          "name": "2XS",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "30",
+          "name": "XS",
+          "size": "0.75rem"
+        },
+        {
+          "slug": "40",
+          "name": "S",
+          "size": "1rem"
+        },
+        {
+          "slug": "50",
+          "name": "M",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "60",
+          "name": "L",
+          "size": "2rem"
+        },
+        {
+          "slug": "70",
+          "name": "XL",
+          "size": "3rem"
+        },
+        {
+          "slug": "80",
+          "name": "2XL",
+          "size": "4rem"
+        }
+      ],
+      "units": [
+        "px",
+        "rem",
+        "%",
+        "vw",
+        "vh"
+      ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "slug": "body",
+          "name": "Avenir Gothic",
+          "fontFamily": "\"Avenir Next\", \"Hiragino Sans\", \"Yu Gothic\", sans-serif"
+        },
+        {
+          "slug": "display",
+          "name": "Georgia",
+          "fontFamily": "Georgia, \"Times New Roman\", serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "name": "Small",
+          "size": "0.95rem"
+        },
+        {
+          "slug": "medium",
+          "name": "Medium",
+          "size": "1.1rem"
+        },
+        {
+          "slug": "large",
+          "name": "Large",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "x-large",
+          "name": "XL",
+          "size": "2.4rem"
+        },
+        {
+          "slug": "display",
+          "name": "Display",
+          "size": "clamp(2.4rem, 7vw, 4.8rem)"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#f7f3eb",
+      "text": "#1d2a37"
+    },
+    "spacing": {
+      "blockGap": "1.5rem"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|body",
+      "lineHeight": "1.7"
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "var:preset|color|text"
+        },
+        "typography": {
+          "fontFamily": "var:preset|font-family|display",
+          "fontWeight": "700",
+          "lineHeight": "1.05"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var:preset|color|accent-strong"
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": "999px"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.9rem",
+            "bottom": "0.9rem",
+            "left": "1.3rem",
+            "right": "1.3rem"
+          }
+        },
+        "typography": {
+          "fontSize": "var:preset|font-size|small",
+          "fontWeight": "700"
+        }
+      },
+      "core/post-title": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|display"
+        }
+      },
+      "core/site-title": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|display",
+          "fontWeight": "700"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ]
+}
